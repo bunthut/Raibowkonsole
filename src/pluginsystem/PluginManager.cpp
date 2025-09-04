@@ -20,7 +20,7 @@
 namespace Konsole
 {
 struct PluginManagerPrivate {
-    std::vector<IKonsolePlugin *> plugins;
+    std::vector<std::unique_ptr<IKonsolePlugin>> plugins;
 };
 
 PluginManager::PluginManager()
@@ -28,10 +28,7 @@ PluginManager::PluginManager()
 {
 }
 
-PluginManager::~PluginManager()
-{
-    qDeleteAll(d->plugins);
-}
+PluginManager::~PluginManager() = default;
 
 void PluginManager::loadAllPlugins()
 {
@@ -53,17 +50,17 @@ void PluginManager::loadAllPlugins()
             continue;
         }
 
-        d->plugins.push_back(result.plugin);
+        d->plugins.emplace_back(std::unique_ptr<IKonsolePlugin>(result.plugin));
     }
 }
 
 void PluginManager::registerMainWindow(Konsole::MainWindow *window)
 {
     QList<QAction *> internalPluginSubmenus;
-    for (auto *plugin : d->plugins) {
+    for (const std::unique_ptr<IKonsolePlugin> &plugin : d->plugins) {
         plugin->addMainWindow(window);
         internalPluginSubmenus.append(plugin->menuBarActions(window));
-        window->addPlugin(plugin);
+        window->addPlugin(plugin.get());
     }
 
     if (internalPluginSubmenus.isEmpty()) {
@@ -77,7 +74,12 @@ void PluginManager::registerMainWindow(Konsole::MainWindow *window)
 
 std::vector<IKonsolePlugin *> PluginManager::plugins() const
 {
-    return d->plugins;
+    std::vector<IKonsolePlugin *> pluginPtrs;
+    pluginPtrs.reserve(d->plugins.size());
+    for (const std::unique_ptr<IKonsolePlugin> &plugin : d->plugins) {
+        pluginPtrs.push_back(plugin.get());
+    }
+    return pluginPtrs;
 }
 
 }

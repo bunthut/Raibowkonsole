@@ -1,54 +1,78 @@
-🧩Raibowkonsole und randomcolorsplugin – Farbenfrohes SSH-Roulette für Konsole
+# 🎲 Rainbowkonsole und randomColorsplugin – Farbschemata bei jedem Start
 
-Plugin-Typ: Konsole Plugin (KPart-basiert)
-Kompatibilität: Plasma 6 / KF6 / Qt6
-Stand: experimentell, läuft 🎉 – Deaktivierung noch in Planung
+**Autor**: Thomas Lorkowski  
+**Plugin-Typ**: Konsole Plugin (KPart-basiert)  
+**Kompatibilität**: Plasma 6 / KF6 / Qt6  
+**Status**: ✨ experimentell (läuft) – Deaktivierung via Plugin-Menü geplant
 
-🧠 Idee
+---
 
-Dieses Plugin wählt bei jedem Start einer neuen Konsole-Session ein zufälliges Farbprofil aus — für mehr visuelles Feedback, Orientierung oder einfach gute Laune.
+## 🧠 Idee
 
-Langfristig soll das Plugin zusätzlich:
+Dieses Plugin weist jeder neuen Konsole-Session beim Start **zufällig ein Farbschema** zu.
 
-gezielt auf SSH-Ziele reagieren (Hostname → Farbschema),
+Das Ziel:  
+- **visuelle Orientierung** (gerade bei vielen offenen Sessions),
+- **reduzierte Fehleranfälligkeit** (SSH auf „falschem“ Server),
+- und ein bisschen **Freude an der Ästhetik**.
 
-sich über das Plugin-Menü aktivieren/deaktivieren lassen (UI-Hook steht noch aus).
+---
 
-📦 Features
+## 🚀 Features
 
-🎲 Zufällige Farbauswahl aus den installierten Profilen
+- 🎲 Wählt zufällig ein bestehendes Farbprofil aus
+- 🎨 Nutzt `Konsole::Session::setProfile()` zur Anwendung
+- ✅ Wird automatisch geladen
+- (🛠️ in Planung) Menüpunkt zum Deaktivieren im Plugin-Fenster
 
-🧠 Profil wird über Konsole::Session::setProfile() angewendet
+---
 
-🧰 Plug-in ist beim Start automatisch aktiv
+## 🔧 Technische Details
 
-(🔜) Toggle über das Plugin-Menü geplant
+- Lädt alle `.profile`-Dateien aus:
+  - `~/.local/share/konsole/`
+  - `/usr/share/konsole/`
+- Verwendet das interne **Profil-API** von Konsole
+- Installationsziel:  
+  `/usr/lib/x86_64-linux-gnu/plugins/konsole/randomcolorplugin.so`
+- Aktivierbar über:
+  - **Einstellungen > Plugins** in Konsole
+  - oder per `konsole --list-plugins`
 
-🔧 Technische Hinweise
+---
 
-Die Farbschemata werden aus ~/.local/share/konsole/*.profile und systemweiten Pfaden geladen
+## 🐞 Bekannte Einschränkungen
 
-Das Plugin wird installiert unter:
-/usr/lib/x86_64-linux-gnu/plugins/konsole/randomcolorplugin.so (standard)
+- Kein UI-Toggle zum Abschalten (noch)
+- Keine persistenten Host-Zuweisungen
+- Farbauswahl ist komplett zufällig, keine Gewichtung
 
-Aktivierung automatisch über pluginsrc oder im Menü Einstellungen > Plugins
+---
 
-🐞 Bekannte Einschränkungen
+## ✨ Ideen für die Zukunft
 
-Keine UI zum Ein-/Ausschalten (wird nachgereicht)
+- 🔗 Verknüpfung von Hostnamen (SSH) mit spezifischen Farbschemata
+- 🧠 Farbliches Warnsystem für produktive Server („root@prod → rot!“)
+- 📷 Auto-Screenshot + Auditing für Sessions mit sensiblen Hosts
+- 🖼️ Live-Wechsel des Farbschemas während der Session (Theme Cycling)
 
-Nicht alle Themes enthalten Farbanpassungen für alle Terminaltypen
+---
 
-Bei Multisession-Start (z. B. Tiling) können Farben identisch sein
+## 📩 Kontakt
 
-✨ Zukunftsideen
+- 🔧 **Quellcode & Issues**: [github.com/bunthut/Raibowkonsole](https://github.com/bunthut/Raibowkonsole)
+- 📨 **Entwicklerliste**: [konsole-devel@kde.org](mailto:konsole-devel@kde.org)
+- 🌐 **Offizielle Webseite**: [konsole.kde.org](https://konsole.kde.org)
+- 💬 **Mailingliste**: [mail.kde.org/mailman/listinfo/konsole-devel](https://mail.kde.org/mailman/listinfo/konsole-devel)
 
-Mapping hostname → colorscheme
+---
 
-Visuelle Warnung bei produktiven Hosts (rot!🔥)
+## 🖼️ Screenshots
 
-Export der aktiven Farbzuweisungen (für Auditing, Screenshots, Logging)
+_Optional hier einfügen: z. B. verschiedene Farben bei verschiedenen SSH-Zielen_
 
-📩 Kontakt & Mitentwicklung
+---
 
-Code & Issues: https://github.com/bunthut/Raibowkonsole
+## Lizenz
+
+[MIT](https://opensource.org/licenses/MIT) oder [GPLv2+](https://www.gnu.org/licenses/gpl-2.0.html) – noch festzulegen.

@@ -15,6 +15,8 @@
 #include <KLocalizedString>
 #include <KPluginFactory>
 #include <KPluginMetaData>
+#include <KConfigGroup>
+#include <KSharedConfig>
 
 #include <QAction>
 #include <QVersionNumber>
@@ -35,7 +37,8 @@ PluginManager::~PluginManager() = default;
 void PluginManager::loadAllPlugins()
 {
     auto filter = [](const KPluginMetaData &data) {
-        const QVersionNumber pluginVersion = QVersionNumber::fromString(QString::fromLatin1(data.version()));
+const QVersionNumber pluginVersion = QVersionNumber::fromString(QString::fromLatin1(data.version()));
+
         const QVersionNumber releaseVersion = QVersionNumber::fromString(QLatin1String(RELEASE_SERVICE_VERSION));
 
         // Accept only plugins that match the current major and minor release version
@@ -56,8 +59,9 @@ void PluginManager::loadAllPlugins()
         pluginMetaData += KPluginMetaData::findPlugins(path, filter);
     }
 
+    KConfigGroup pluginsConfig(KSharedConfig::openConfig(), QStringLiteral("Plugins"));
     for (const auto &metaData : std::as_const(pluginMetaData)) {
-        if (!metaData.isEnabled()) {
+        if (!metaData.isEnabled(pluginsConfig)) {
             continue;
         }
         const KPluginFactory::Result result = KPluginFactory::instantiatePlugin<IKonsolePlugin>(metaData);

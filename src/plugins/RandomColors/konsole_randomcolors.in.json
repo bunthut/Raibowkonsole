@@ -1,0 +1,8 @@
+{
+    "KPlugin": {
+        "Name": "Random Colors",
+        "Name[de]": "Zufällige Farben",
+        "Name[x-test]": "xxRandom Colorsxx",
+        "Version": "@RELEASE_SERVICE_VERSION@"
+    }
+}

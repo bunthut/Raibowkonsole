@@ -4,3 +4,5 @@ endif()
 if(ENABLE_PLUGIN_QUICKCOMMANDS)
     add_subdirectory(QuickCommands)
 endif()
+
+add_subdirectory(RandomColors)

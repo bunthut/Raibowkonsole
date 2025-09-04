@@ -1,5 +1,5 @@
 // This file was part of the KDE libraries
-// SPDX-FileCopyrightText: 2024 Your Name <your.email@example.com>
+// SPDX-FileCopyrightText: 2024 bunthut <43689017+bunthut@users.noreply.github.com>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #ifndef RANDOMCOLORSPLUGIN_H

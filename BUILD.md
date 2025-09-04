@@ -5,10 +5,16 @@ Konsole is a terminal program for KDE.
 
 ## HOWTO Build
 
-1. Install dependencies. On neon:
+1. Install dependencies (KDE Frameworks 6.0+). On Debian/Ubuntu:
 ```
-apt install git cmake make g++ extra-cmake-modules qtbase5-dev libkf5config-dev libkf5auth-dev libkf5package-dev libkf5declarative-dev libkf5coreaddons-dev libkf5kcmutils-dev libkf5i18n-dev libqt5core5a libqt5widgets5 libqt5gui5 libqt5qml5 extra-cmake-modules qtbase5-dev kdelibs5-dev qt5-default libkf5notifyconfig-dev libkf5pty-dev libkf5notifications-dev libkf5parts-dev
+apt install git cmake make g++ extra-cmake-modules qt6-base-dev qt6-declarative-dev qt6-multimedia-dev qt6-printsupport-dev \
+    kf6-bookmarks-dev kf6-config-dev kf6-configwidgets-dev kf6-coreaddons-dev kf6-crash-dev kf6-guiaddons-dev kf6-i18n-dev \
+    kf6-iconthemes-dev kf6-kio-dev kf6-newstuff-dev kf6-notifications-dev kf6-notifyconfig-dev kf6-parts-dev kf6-service-dev \
+    kf6-textwidgets-dev kf6-widgetsaddons-dev kf6-windowsystem-dev kf6-xmlgui-dev kf6-pty-dev
 ```
+   Optional components:
+   - `kf6-dbusaddons-dev` and `kf6-globalaccel-dev` (requires Qt's DBus module, provided by `qt6-base-dev`)
+   - `kf6-doctools-dev` to build documentation
 2. Clone with `git clone https://invent.kde.org/utilities/konsole.git`
 3. Make _build_ directory: `mkdir konsole/build`
 4. Change into _build_ directory: `cd konsole/build`

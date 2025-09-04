@@ -37,7 +37,8 @@ PluginManager::~PluginManager() = default;
 void PluginManager::loadAllPlugins()
 {
     auto filter = [](const KPluginMetaData &data) {
-        const QVersionNumber pluginVersion = QVersionNumber::fromString(data.version());
+const QVersionNumber pluginVersion = QVersionNumber::fromString(QString::fromLatin1(data.version()));
+
         const QVersionNumber releaseVersion = QVersionNumber::fromString(QLatin1String(RELEASE_SERVICE_VERSION));
 
         // Accept only plugins that match the current major and minor release version

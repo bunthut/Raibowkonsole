@@ -10,6 +10,7 @@
 #include "IKonsolePlugin.h"
 #include "MainWindow.h"
 #include "konsoledebug.h"
+#include "KonsoleSettings.h"
 
 #include <KLocalizedString>
 #include <KPluginFactory>
@@ -35,19 +36,28 @@ PluginManager::~PluginManager()
 
 void PluginManager::loadAllPlugins()
 {
-    QVector<KPluginMetaData> pluginMetaData = KPluginMetaData::findPlugins(QStringLiteral("konsoleplugins"), [](const KPluginMetaData &data) {
-        // Compare RELEASE_SERVICE_VERSION MAJOR and MINOR only: XX.YY
+    auto filter = [](const KPluginMetaData &data) {
         auto plugin_version = QString(data.version()).left(5);
         auto release_version = QLatin1String(RELEASE_SERVICE_VERSION).left(5);
         if (plugin_version == release_version) {
             return true;
         } else {
-            qCWarning(KonsoleDebug) << "Ignoring" << data.name() << "plugin version (" << plugin_version << ") doesn't match release version ("
-                                    << release_version << ")";
+            qCWarning(KonsoleDebug) << "Ignoring" << data.name() << "plugin version (" << plugin_version
+                                    << ") doesn't match release version (" << release_version << ")";
             return false;
         }
-    });
+    };
+    QVector<KPluginMetaData> pluginMetaData = KPluginMetaData::findPlugins(QStringLiteral("konsoleplugins"), filter);
+
+    const QStringList extraPaths = KonsoleSettings::customPluginPaths();
+    for (const QString &path : extraPaths) {
+        pluginMetaData += KPluginMetaData::findPlugins(path, filter);
+    }
+
     for (const auto &metaData : std::as_const(pluginMetaData)) {
+        if (!metaData.isEnabled()) {
+            continue;
+        }
         const KPluginFactory::Result result = KPluginFactory::instantiatePlugin<IKonsolePlugin>(metaData);
         if (!result) {
             continue;

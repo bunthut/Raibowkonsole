@@ -57,6 +57,7 @@ find_package(KF6 ${KF6_DEP_VERSION} REQUIRED
     GuiAddons
     I18n
     IconThemes
+    KCMUtils
     KIO
     NewStuff
     Notifications

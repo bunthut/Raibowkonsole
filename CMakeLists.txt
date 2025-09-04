@@ -61,7 +61,6 @@ find_package(KF6 ${KF6_DEP_VERSION} REQUIRED
     NewStuff
     Notifications
     NotifyConfig
-    KCMUtils
     Parts
     Service
     TextWidgets

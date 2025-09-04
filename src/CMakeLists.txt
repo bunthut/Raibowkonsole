@@ -342,7 +342,6 @@ target_link_libraries(konsoleapp
   KF6::NotifyConfig
   KF6::Crash
   KF6::ConfigWidgets
-  KF6::KCMUtilsWidgets
 )
 
 set_target_properties(konsoleapp PROPERTIES

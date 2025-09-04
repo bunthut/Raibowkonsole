@@ -20,6 +20,7 @@ K_PLUGIN_CLASS_WITH_JSON(RandomColorsPlugin, "konsole_randomcolors.json")
 RandomColorsPlugin::RandomColorsPlugin(QObject *parent, const QVariantList &args)
     : Konsole::IKonsolePlugin(parent, args)
 {
+    KLocalizedString::setApplicationDomain("konsole");
     setName(QStringLiteral("RandomColors"));
 }
 

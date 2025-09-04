@@ -9,6 +9,8 @@
 #include "profile/Profile.h"
 #include "colorscheme/ColorSchemeManager.h"
 
+#include <KLocalizedString>
+#include <QAction>
 #include <QRandomGenerator>
 
 #include "MainWindow.h"
@@ -25,13 +27,20 @@ RandomColorsPlugin::~RandomColorsPlugin() = default;
 
 void RandomColorsPlugin::createWidgetsForMainWindow(Konsole::MainWindow *mainWindow)
 {
-    Q_UNUSED(mainWindow);
+    auto action = new QAction(i18n("Enable Random Colors"), mainWindow);
+    action->setCheckable(true);
+    action->setChecked(true);
+    m_enableActions.insert(mainWindow, action);
 }
 
 void RandomColorsPlugin::activeViewChanged(Konsole::SessionController *controller, Konsole::MainWindow *mainWindow)
 {
-    Q_UNUSED(mainWindow)
     if (!controller) {
+        return;
+    }
+
+    auto action = m_enableActions.value(mainWindow, nullptr);
+    if (action && !action->isChecked()) {
         return;
     }
 
@@ -52,6 +61,11 @@ void RandomColorsPlugin::activeViewChanged(Konsole::SessionController *controlle
 
     controller->view()->applyProfile(profile);
     Konsole::SessionManager::instance()->setSessionProfile(controller->session(), profile);
+}
+
+QList<QAction *> RandomColorsPlugin::menuBarActions(Konsole::MainWindow *mainWindow) const
+{
+    return {m_enableActions.value(mainWindow)};
 }
 
 #include "moc_randomcolorsplugin.cpp"

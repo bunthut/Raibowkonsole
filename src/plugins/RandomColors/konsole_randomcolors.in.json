@@ -3,6 +3,8 @@
         "Name": "Random Colors",
         "Name[de]": "Zufällige Farben",
         "Name[x-test]": "xxRandom Colorsxx",
+        "Description": "Assigns a random color scheme whenever the active view changes",
+        "Description[de]": "Weist bei jedem Fensterwechsel ein zufälliges Farbschema zu",
         "Version": "@RELEASE_SERVICE_VERSION@"
     }
 }

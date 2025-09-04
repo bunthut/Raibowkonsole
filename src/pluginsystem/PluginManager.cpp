@@ -34,7 +34,7 @@ PluginManager::~PluginManager() = default;
 void PluginManager::loadAllPlugins()
 {
     QVector<KPluginMetaData> pluginMetaData = KPluginMetaData::findPlugins(QStringLiteral("konsoleplugins"), [](const KPluginMetaData &data) {
-        const QVersionNumber pluginVersion = QVersionNumber::fromString(QString::fromLatin1(data.version()));
+        const QVersionNumber pluginVersion = QVersionNumber::fromString(data.version());
         const QVersionNumber releaseVersion = QVersionNumber::fromString(QLatin1String(RELEASE_SERVICE_VERSION));
         if (pluginVersion.majorVersion() == releaseVersion.majorVersion() && pluginVersion.minorVersion() == releaseVersion.minorVersion()) {
             return true;

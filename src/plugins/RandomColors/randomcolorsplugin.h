@@ -20,6 +20,7 @@ public:
     RandomColorsPlugin(QObject *parent, const QVariantList &args);
     ~RandomColorsPlugin() override;
 
+    void createWidgetsForMainWindow(Konsole::MainWindow *mainWindow) override;
     void activeViewChanged(Konsole::SessionController *controller, Konsole::MainWindow *mainWindow) override;
 };
 

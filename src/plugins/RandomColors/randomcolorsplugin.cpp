@@ -23,6 +23,11 @@ RandomColorsPlugin::RandomColorsPlugin(QObject *parent, const QVariantList &args
 
 RandomColorsPlugin::~RandomColorsPlugin() = default;
 
+void RandomColorsPlugin::createWidgetsForMainWindow(Konsole::MainWindow *mainWindow)
+{
+    Q_UNUSED(mainWindow);
+}
+
 void RandomColorsPlugin::activeViewChanged(Konsole::SessionController *controller, Konsole::MainWindow *mainWindow)
 {
     Q_UNUSED(mainWindow)

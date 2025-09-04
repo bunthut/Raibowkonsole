@@ -1,35 +1,54 @@
-# Konsole - KDE's Terminal Emulator
+🧩Raibowkonsole und randomcolorsplugin – Farbenfrohes SSH-Roulette für Konsole
 
-Konsole is a terminal program for KDE.
+Plugin-Typ: Konsole Plugin (KPart-basiert)
+Kompatibilität: Plasma 6 / KF6 / Qt6
+Stand: experimentell, läuft 🎉 – Deaktivierung noch in Planung
 
-As well as being a standalone program, it is also used by other KDE programs
-such as the Kate editor and KDevelop development environment to provide easy
-access to a terminal window. Konsole's features and usage are explained and
-illustrated in the Konsole handbook, which can be accessed by browsing to
-`help:/konsole` in Konqueror.
+🧠 Idee
 
+Dieses Plugin wählt bei jedem Start einer neuen Konsole-Session ein zufälliges Farbprofil aus — für mehr visuelles Feedback, Orientierung oder einfach gute Laune.
 
-## Directory Structure
+Langfristig soll das Plugin zusätzlich:
 
-| Directory          | Description                                                                                                                                                                        |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `/doc/user`        | README files, primarily for advanced users, explaining various aspects of Konsole such as fonts and keyboard handling in-depth.                                                    |
-| `/doc/developer`   | README files and resources for developers of Konsole. This includes information on the design of Konsole's internals and the VT100 terminal on which Konsole's emulation is based. |
-| `/src`             | Source code for Konsole, including the embedded versions of Konsole which are used in Kate, KDevelop and others.                                                                   |
-| `/desktop`         | .desktop files for Konsole, used to launch the program from KDE's various menus and other application launchers.                                                                   |
-| `/data`            | Data files for use with Konsole as well as the keyboard setup and color schemes provided with Konsole.                                                                             |
+gezielt auf SSH-Ziele reagieren (Hostname → Farbschema),
 
-## Contact
+sich über das Plugin-Menü aktivieren/deaktivieren lassen (UI-Hook steht noch aus).
 
-Up-to-date information about the latest releases can be found on Konsole's
-website at https://konsole.kde.org. Discussions about Konsole's development are
-held on the konsole-devel mailing list, which can be accessed at
-https://mail.kde.org/mailman/listinfo/konsole-devel.
+📦 Features
 
-## Quick Links
-- [KDE Release Schedule](https://community.kde.org/Schedules)
-- [Official Homepage](https://konsole.kde.org)
-- [Builds](https://invent.kde.org/utilities/konsole/-/pipelines)
-- [Forums](https://discuss.kde.org/tag/konsole)
-- [Konsole Bug Reports ](https://bugs.kde.org/describecomponents.cgi?product=konsole)
+🎲 Zufällige Farbauswahl aus den installierten Profilen
 
+🧠 Profil wird über Konsole::Session::setProfile() angewendet
+
+🧰 Plug-in ist beim Start automatisch aktiv
+
+(🔜) Toggle über das Plugin-Menü geplant
+
+🔧 Technische Hinweise
+
+Die Farbschemata werden aus ~/.local/share/konsole/*.profile und systemweiten Pfaden geladen
+
+Das Plugin wird installiert unter:
+/usr/lib/x86_64-linux-gnu/plugins/konsole/randomcolorplugin.so (standard)
+
+Aktivierung automatisch über pluginsrc oder im Menü Einstellungen > Plugins
+
+🐞 Bekannte Einschränkungen
+
+Keine UI zum Ein-/Ausschalten (wird nachgereicht)
+
+Nicht alle Themes enthalten Farbanpassungen für alle Terminaltypen
+
+Bei Multisession-Start (z. B. Tiling) können Farben identisch sein
+
+✨ Zukunftsideen
+
+Mapping hostname → colorscheme
+
+Visuelle Warnung bei produktiven Hosts (rot!🔥)
+
+Export der aktiven Farbzuweisungen (für Auditing, Screenshots, Logging)
+
+📩 Kontakt & Mitentwicklung
+
+Code & Issues: https://github.com/bunthut/Raibowkonsole

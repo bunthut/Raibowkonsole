@@ -15,6 +15,7 @@
 #include <KPluginMetaData>
 #include <KPluginWidget>
 #include <KSharedConfig>
+#include <KConfigGroup>
 #include <keditlistwidget.h>
 
 using namespace Konsole;
@@ -25,9 +26,11 @@ PluginSettings::PluginSettings(QWidget *parent)
     setupUi(this);
 
     // Populate plugin list
-    pluginWidget->setConfig(KSharedConfig::openConfig());
+    auto config = KSharedConfig::openConfig();
+    pluginWidget->setConfig(config->group(QStringLiteral("Plugins")));
     const auto metaData = KPluginMetaData::findPlugins(QStringLiteral("konsoleplugins"));
-    pluginWidget->addPlugins(metaData, KPluginWidget::ReadConfigFile);
+    pluginWidget->addPlugins(metaData, QString());
+    pluginWidget->load();
 
     // Use a file dialog to add directories
     connect(addPathButton, &QPushButton::clicked, this, [this]() {

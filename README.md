@@ -1,78 +1,77 @@
-# 🎲 Rainbowkonsole und randomColorsplugin – Farbschemata bei jedem Start
+# Rainbowkonsole und randomcolorplugin
+───────
 
-**Autor**: Thomas Lorkowski  
-**Plugin-Typ**: Konsole Plugin (KPart-basiert)  
-**Kompatibilität**: Plasma 6 / KF6 / Qt6  
-**Status**: ✨ experimentell (läuft) – Deaktivierung via Plugin-Menü geplant
+Konsole-Plugin für zufällige Farbschemata beim Start neuer Terminal-Sessions.
 
----
+Autor: Thomas Lorkowski  
+Status: Experimentell  
+Kompatibilität: Plasma 6 / KDE Frameworks 6 / Qt 6
 
-## 🧠 Idee
+───────
 
-Dieses Plugin weist jeder neuen Konsole-Session beim Start **zufällig ein Farbschema** zu.
+## Idee
 
-Das Ziel:  
-- **visuelle Orientierung** (gerade bei vielen offenen Sessions),
-- **reduzierte Fehleranfälligkeit** (SSH auf „falschem“ Server),
-- und ein bisschen **Freude an der Ästhetik**.
+Dieses Plugin erweitert Konsole um die Fähigkeit, bei jeder neuen Terminal-Session ein zufälliges Farbprofil auszuwählen. Ziel ist es, visuelle Orientierung zu bieten und parallele Sessions besser unterscheidbar zu machen.
 
----
+───────
 
-## 🚀 Features
+## Features
 
-- 🎲 Wählt zufällig ein bestehendes Farbprofil aus
-- 🎨 Nutzt `Konsole::Session::setProfile()` zur Anwendung
-- ✅ Wird automatisch geladen
-- (🛠️ in Planung) Menüpunkt zum Deaktivieren im Plugin-Fenster
+• Automatische Auswahl eines zufälligen `.profile`-Farbthemas  
+• Anwendung via `Konsole::Session::setProfile()`  
+• Läuft automatisch nach dem Start (kein Benutzer-Input nötig)  
+• Integration ins Plugin-System von Konsole  
+• Vorbereitung für Deaktivierbarkeit über die GUI
 
----
+───────
 
-## 🔧 Technische Details
+## Technische Details
 
-- Lädt alle `.profile`-Dateien aus:
+• Durchsucht folgende Pfade nach Profilen:
   - `~/.local/share/konsole/`
   - `/usr/share/konsole/`
-- Verwendet das interne **Profil-API** von Konsole
-- Installationsziel:  
-  `/usr/lib/x86_64-linux-gnu/plugins/konsole/randomcolorplugin.so`
-- Aktivierbar über:
-  - **Einstellungen > Plugins** in Konsole
-  - oder per `konsole --list-plugins`
 
----
+• Installation unter:
+  - `/usr/lib/x86_64-linux-gnu/plugins/konsole/randomcolorplugin.so`
 
-## 🐞 Bekannte Einschränkungen
+• Aktivierbar über:
+  - Menü → Einstellungen → Plugins
+  - oder per CLI: `konsole --list-plugins`
 
-- Kein UI-Toggle zum Abschalten (noch)
-- Keine persistenten Host-Zuweisungen
-- Farbauswahl ist komplett zufällig, keine Gewichtung
+───────
 
----
+## Bekannte Einschränkungen
 
-## ✨ Ideen für die Zukunft
+• Keine UI zur Deaktivierung (noch in Planung)  
+• Keine persistente Farbzuweisung pro Host  
+• Farbauswahl ist rein zufällig (kein Hash-basiertes Mapping)
 
-- 🔗 Verknüpfung von Hostnamen (SSH) mit spezifischen Farbschemata
-- 🧠 Farbliches Warnsystem für produktive Server („root@prod → rot!“)
-- 📷 Auto-Screenshot + Auditing für Sessions mit sensiblen Hosts
-- 🖼️ Live-Wechsel des Farbschemas während der Session (Theme Cycling)
+───────
 
----
+## Erweiterungsideen
 
-## 📩 Kontakt
+• Hostname-basierte Farbschema-Zuweisung (z. B. `prod → rot`)  
+• Warnmechanismen für bestimmte SSH-Ziele  
+• Export/Auditing der Session-Farben  
+• Dynamischer Theme-Wechsel während einer Session
 
-- 🔧 **Quellcode & Issues**: [github.com/bunthut/Raibowkonsole](https://github.com/bunthut/Raibowkonsole)
-- 📨 **Entwicklerliste**: [konsole-devel@kde.org](mailto:konsole-devel@kde.org)
-- 🌐 **Offizielle Webseite**: [konsole.kde.org](https://konsole.kde.org)
-- 💬 **Mailingliste**: [mail.kde.org/mailman/listinfo/konsole-devel](https://mail.kde.org/mailman/listinfo/konsole-devel)
+───────
 
----
+## Kontakt & Mitentwicklung
 
-## 🖼️ Screenshots
+Quellcode:  
+→ https://github.com/bunthut/Raibowkonsole
 
-_Optional hier einfügen: z. B. verschiedene Farben bei verschiedenen SSH-Zielen_
+Konsole-Entwicklerliste:  
+→ https://mail.kde.org/mailman/listinfo/konsole-devel
 
----
+Offizielle Seite:  
+→ https://konsole.kde.org
+
+───────
 
 ## Lizenz
 
-[MIT](https://opensource.org/licenses/MIT) oder [GPLv2+](https://www.gnu.org/licenses/gpl-2.0.html) – noch festzulegen.
+Noch festzulegen. Empfehlung: MIT oder GPLv2+
+
+───────

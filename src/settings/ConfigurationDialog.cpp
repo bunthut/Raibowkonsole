@@ -14,14 +14,17 @@
 
 // Konsole
 #include "ConfigDialogButtonGroupManager.h"
+#include "PluginSettings.h"
 
 // Qt
 #include <QDialogButtonBox>
 #include <QPushButton>
+#include <QIcon>
 
 // KDE
 #include <KConfigDialogManager>
 #include <KLocalizedString>
+#include <KPageWidgetItem>
 
 using namespace Konsole;
 
@@ -58,6 +61,11 @@ ConfigurationDialog::ConfigurationDialog(QWidget *parent, KCoreConfigSkeleton *c
             &QAbstractButton::clicked,
             _groupManager,
             &ConfigDialogButtonGroupManager::updateWidgetsDefault);
+
+    const QString pluginsPageName = i18nc("@title Preferences page name", "Plugins");
+    auto *pluginsPage = new KPageWidgetItem(new PluginSettings(this), pluginsPageName);
+    pluginsPage->setIcon(QIcon::fromTheme(QStringLiteral("plugins")));
+    addPage(pluginsPage, true);
 
     setApplyButtonEnabled(false);
 }

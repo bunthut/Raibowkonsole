@@ -262,6 +262,7 @@ ki18n_wrap_ui(konsoleprivate_SRCS
     RenameTabDialog.ui
     settings/GeneralSettings.ui
     settings/MemorySettings.ui
+    settings/PluginSettings.ui
     settings/PartInfo.ui
     settings/ProfileSettings.ui
     settings/TabBarSettings.ui
@@ -318,6 +319,7 @@ add_library(konsoleapp SHARED Application.cpp
     settings/TemporaryFilesSettings.cpp
     settings/GeneralSettings.cpp
     settings/MemorySettings.cpp
+    settings/PluginSettings.cpp
     settings/ProfileSettings.cpp
     settings/TabBarSettings.cpp
     settings/ThumbnailsSettings.cpp
@@ -339,6 +341,8 @@ target_link_libraries(konsoleapp
   KF6::KIOWidgets
   KF6::NotifyConfig
   KF6::Crash
+  KF6::ConfigWidgets
+  KF6::KCMUtilsWidgets
 )
 
 set_target_properties(konsoleapp PROPERTIES

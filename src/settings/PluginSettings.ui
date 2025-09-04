@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PluginSettings</class>
+ <widget class="QWidget" name="PluginSettings">
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="KPluginWidget" name="pluginWidget"/>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Additional Plugin Directories</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="KEditListWidget" name="kcfg_CustomPluginPaths"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="addPathButton">
+        <property name="text">
+         <string>Add Directory...</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KPluginWidget</class>
+   <extends>QWidget</extends>
+   <header>kpluginwidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KEditListWidget</class>
+   <extends>QWidget</extends>
+   <header>keditlistwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

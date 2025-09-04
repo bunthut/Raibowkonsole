@@ -71,7 +71,6 @@ Offizielle Seite:
 ───────
 
 ## Lizenz
-
-Noch festzulegen. Empfehlung: MIT oder GPLv2+
+GPLv2+
 
 ───────

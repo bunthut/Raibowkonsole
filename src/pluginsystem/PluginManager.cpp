@@ -17,11 +17,12 @@
 #include <KPluginMetaData>
 
 #include <QAction>
+#include <QVersionNumber>
 
 namespace Konsole
 {
 struct PluginManagerPrivate {
-    std::vector<IKonsolePlugin *> plugins;
+    std::vector<std::unique_ptr<IKonsolePlugin>> plugins;
 };
 
 PluginManager::PluginManager()
@@ -29,21 +30,24 @@ PluginManager::PluginManager()
 {
 }
 
-PluginManager::~PluginManager()
-{
-    qDeleteAll(d->plugins);
-}
+PluginManager::~PluginManager() = default;
 
 void PluginManager::loadAllPlugins()
-{
-    auto filter = [](const KPluginMetaData &data) {
-        auto plugin_version = QString(data.version()).left(5);
-        auto release_version = QLatin1String(RELEASE_SERVICE_VERSION).left(5);
-        if (plugin_version == release_version) {
-            return true;
-        } else {
-            qCWarning(KonsoleDebug) << "Ignoring" << data.name() << "plugin version (" << plugin_version
-                                    << ") doesn't match release version (" << release_version << ")";
+QVector<KPluginMetaData> pluginMetaData = KPluginMetaData::findPlugins(QStringLiteral("konsoleplugins"), [](const KPluginMetaData &data) {
+    const QVersionNumber pluginVersion = QVersionNumber::fromString(QString::fromLatin1(data.version()));
+    const QVersionNumber releaseVersion = QVersionNumber::fromString(QLatin1String(RELEASE_SERVICE_VERSION));
+    
+    // Check if the major and minor versions match
+    if (pluginVersion.majorVersion() == releaseVersion.majorVersion() && 
+        pluginVersion.minorVersion() == releaseVersion.minorVersion()) {
+        return true;
+    } else {
+        qCWarning(KonsoleDebug) << "Ignoring" << data.name() << "plugin version (" << pluginVersion.toString()
+                                << ") doesn't match release version (" << releaseVersion.toString() << ")";
+        return false; // Explicitly return false for clarity
+    }
+});
+
             return false;
         }
     };
@@ -63,17 +67,17 @@ void PluginManager::loadAllPlugins()
             continue;
         }
 
-        d->plugins.push_back(result.plugin);
+        d->plugins.emplace_back(std::unique_ptr<IKonsolePlugin>(result.plugin));
     }
 }
 
 void PluginManager::registerMainWindow(Konsole::MainWindow *window)
 {
     QList<QAction *> internalPluginSubmenus;
-    for (auto *plugin : d->plugins) {
+    for (const std::unique_ptr<IKonsolePlugin> &plugin : d->plugins) {
         plugin->addMainWindow(window);
         internalPluginSubmenus.append(plugin->menuBarActions(window));
-        window->addPlugin(plugin);
+        window->addPlugin(plugin.get());
     }
 
     if (internalPluginSubmenus.isEmpty()) {
@@ -87,7 +91,12 @@ void PluginManager::registerMainWindow(Konsole::MainWindow *window)
 
 std::vector<IKonsolePlugin *> PluginManager::plugins() const
 {
-    return d->plugins;
+    std::vector<IKonsolePlugin *> pluginPtrs;
+    pluginPtrs.reserve(d->plugins.size());
+    for (const std::unique_ptr<IKonsolePlugin> &plugin : d->plugins) {
+        pluginPtrs.push_back(plugin.get());
+    }
+    return pluginPtrs;
 }
 
 }

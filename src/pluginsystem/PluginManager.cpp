@@ -19,6 +19,7 @@
 #include <KSharedConfig>
 
 #include <QAction>
+#include <QtGlobal>
 #include <QVersionNumber>
 #include <QtGlobal>
 
@@ -34,13 +35,12 @@ PluginManager::~PluginManager() = default;
 void PluginManager::loadAllPlugins() {
   auto filter = [](const KPluginMetaData &data) {
     const QVersionNumber pluginVersion =
-        QVersionNumber::fromString(data.version());
+        QVersionNumber::fromString(QString::fromLatin1(data.version()));
 
     const QVersionNumber releaseVersion =
         QVersionNumber::fromString(QLatin1String(RELEASE_SERVICE_VERSION));
 
-    // Accept only plugins that match the current major and minor release
-    // version
+    // Accept only plugins that match the current major and minor release version
     if (pluginVersion.majorVersion() == releaseVersion.majorVersion() &&
         pluginVersion.minorVersion() == releaseVersion.minorVersion()) {
       return true;

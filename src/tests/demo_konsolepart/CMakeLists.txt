@@ -12,11 +12,10 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMInstallIcons)
 include(FeatureSummary)
 
-set(QT_MIN_VERSION "6.4.2")
-find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Core Gui Widgets)
+# Use the same minimum versions as the main project
+find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Core Gui Widgets)
 
-set(REQUIRED_KF_VERSION "6.0.0")
-find_package(KF6 ${REQUIRED_KF_VERSION} REQUIRED COMPONENTS
+find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS
     CoreAddons
     I18n
 )

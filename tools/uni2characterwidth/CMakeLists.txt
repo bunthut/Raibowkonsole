@@ -11,10 +11,10 @@ if(KONSOLE_BUILD_UNI2CHARACTERWIDTH)
 #       some other errors that will need fixed.  For now if this
 #       needs to be used, build it on a Qt5 system.
 
-    find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED
+    find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED
         Core
     )
-    find_package(KF6 ${KF_MIN_VERSION} REQUIRED
+    find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED
         KIO
     )
 
@@ -28,7 +28,7 @@ if(KONSOLE_BUILD_UNI2CHARACTERWIDTH)
     add_executable(uni2characterwidth ${uni2characterwidth_SRC})
     target_link_libraries(uni2characterwidth
         Qt::Core
-        KF6::KIOCore
+        ${KF_PREFIX}::KIOCore
     )
 
 endif()

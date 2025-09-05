@@ -19,6 +19,7 @@
 #include <KSharedConfig>
 
 #include <QAction>
+#include <QtGlobal>
 #include <QVersionNumber>
 
 namespace Konsole
@@ -52,7 +53,13 @@ void PluginManager::loadAllPlugins()
         return false;
     };
 
-    QVector<KPluginMetaData> pluginMetaData = KPluginMetaData::findPlugins(QStringLiteral("konsoleplugins"), filter);
+    QString pluginNamespace = QStringLiteral("konsoleplugins");
+#if QT_VERSION_MAJOR >= 6
+    QVector<KPluginMetaData> pluginMetaData = KPluginMetaData::findPlugins(QStringLiteral("kf6/konsoleplugins"), filter);
+    pluginMetaData += KPluginMetaData::findPlugins(pluginNamespace, filter);
+#else
+    QVector<KPluginMetaData> pluginMetaData = KPluginMetaData::findPlugins(pluginNamespace, filter);
+#endif
 
     const QStringList extraPaths = KonsoleSettings::customPluginPaths();
     for (const QString &path : extraPaths) {

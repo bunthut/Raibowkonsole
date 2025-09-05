@@ -6,11 +6,11 @@ set(demo_konsolepart_SRCS
 add_executable(demo_konsolepart ${demo_konsolepart_SRCS})
 
 target_link_libraries(demo_konsolepart
-    KF6::CoreAddons
-    KF6::I18n
-    KF6::Parts
-    KF6::Service
+    ${KF_PREFIX}::CoreAddons
+    ${KF_PREFIX}::I18n
+    ${KF_PREFIX}::Parts
+    ${KF_PREFIX}::Service
     Qt::Widgets
-    KF6::XmlGui
-    KF6::WindowSystem
+    ${KF_PREFIX}::XmlGui
+    ${KF_PREFIX}::WindowSystem
 )

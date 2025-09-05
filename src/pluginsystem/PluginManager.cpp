@@ -35,7 +35,7 @@ PluginManager::~PluginManager() = default;
 void PluginManager::loadAllPlugins() {
   auto filter = [](const KPluginMetaData &data) {
     const QVersionNumber pluginVersion =
-        QVersionNumber::fromString(QString::fromLatin1(data.version()));
+        QVersionNumber::fromString(data.version());
 
     const QVersionNumber releaseVersion =
         QVersionNumber::fromString(QLatin1String(RELEASE_SERVICE_VERSION));

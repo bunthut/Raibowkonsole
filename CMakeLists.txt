@@ -20,11 +20,13 @@ if(BUILD_WITH_QT5)
     set(QT_MIN_VERSION "5.15.2")
     set(KF_MAJOR_VERSION 5)
     set(KF_MIN_VERSION "5.105.0")
+    set(ECM_MIN_VERSION "5.105.0")
 else()
     set(QT_MAJOR_VERSION 6)
     set(QT_MIN_VERSION "6.4.2")
     set(KF_MAJOR_VERSION 6)
     set(KF_MIN_VERSION "6.0.0")
+    set(ECM_MIN_VERSION "6.0.0")
 endif()
 
 set(KF_PREFIX KF${KF_MAJOR_VERSION})
@@ -32,7 +34,8 @@ set(KF_PREFIX KF${KF_MAJOR_VERSION})
 # Release script will create bugzilla versions
 project(konsole VERSION ${RELEASE_SERVICE_VERSION} LANGUAGES CXX)
 
-find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
+find_package(ECM ${ECM_MIN_VERSION} REQUIRED NO_MODULE)
+
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
 
 include(KDEInstallDirs)
@@ -132,53 +135,4 @@ add_definitions(
   -DQT_NO_URL_CAST_FROM_STRING
 )
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
-
-include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY_DIR})
-
-file(GLOB ICONS_SRCS "data/icons/*.png")
-
-option(ENABLE_PLUGIN_SSHMANAGER "Build the SSHManager plugin" ON)
-option(ENABLE_PLUGIN_QUICKCOMMANDS "Build the Quick Commands plugin" ON)
-
-add_subdirectory( src )
-add_subdirectory( desktop )
-
-if(${KFDocTools_MODULE}_FOUND)
-    add_subdirectory( doc/manual )
-endif()
-
-add_subdirectory( tools )
-
-# Conditionally install icons for Linux as they may not be provided by the user theme
-option(INSTALL_ICONS "Install icons" OFF)
-if(INSTALL_ICONS)
-    include(ECMInstallIcons)
-    ecm_install_icons( ICONS ${ICONS_SRCS} DESTINATION ${KDE_INSTALL_ICONDIR} )
-endif()
-
-ecm_qt_install_logging_categories(
-    EXPORT KONSOLE
-    FILE konsole.categories
-    DESTINATION "${KDE_INSTALL_LOGGINGCATEGORIESDIR}"
-)
-
-ki18n_install( po )
-if(${KFDocTools_MODULE}_FOUND)
-    kdoctools_install( po )
-endif()
-
-if(ECM_VERSION VERSION_GREATER_EQUAL 5.101.0)
-  install(FILES completions/konsole.zsh RENAME _konsole DESTINATION ${KDE_INSTALL_ZSHAUTOCOMPLETEDIR})
-endif()
-
-feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
-
-# add clang-format target for all our real source files
-file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.c *.cpp *.h *.hpp)
-kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
-if(ECM_VERSION VERSION_GREATER_EQUAL 5.79.0)
-    kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
-endif()
+set(CMAKE

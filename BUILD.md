@@ -21,6 +21,11 @@ apt install git cmake make g++ extra-cmake-modules qt6-base-dev qt6-declarative-
 4. Change into _build_ directory: `cd konsole/build`
 5. Configure: `cmake ..` (or `cmake .. -DCMAKE_INSTALL_PREFIX=/where/your/want/to/install`)
    To build against Qt5/KF5 use: `cmake .. -DBUILD_WITH_QT5=ON`
+
+   Alternatively, from the project root you can run:
+   ```
+   cmake -S . -B build -DBUILD_WITH_QT5=ON
+   ```
 6. Build: `make`
 7. Install: `make install`
 

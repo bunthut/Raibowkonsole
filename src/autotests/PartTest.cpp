@@ -45,7 +45,7 @@ void PartTest::initTestCase()
 void PartTest::testFdShell()
 {
 #if defined(Q_OS_FREEBSD)
-    QSKIP("Skipping on CI FreeBSD14_qt6x", SkipSingle);
+    QSKIP("Skipping on CI FreeBSD14_qt5x", SkipSingle);
     return;
 #endif
 

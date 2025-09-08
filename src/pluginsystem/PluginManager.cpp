@@ -53,17 +53,11 @@ void PluginManager::loadAllPlugins() {
     return false;
   };
 
-  QString pluginNamespace = QStringLiteral("konsoleplugins");
-#if QT_VERSION_MAJOR >= 6
   QVector<KPluginMetaData> pluginMetaData = KPluginMetaData::findPlugins(
-      QStringLiteral("kf6/konsoleplugins"), filter);
+      QStringLiteral("qt5/plugins/konsoleplugins"), filter);
   if (pluginMetaData.isEmpty()) {
-    pluginMetaData = KPluginMetaData::findPlugins(pluginNamespace, filter);
+    pluginMetaData = KPluginMetaData::findPlugins(QStringLiteral("konsoleplugins"), filter);
   }
-#else
-  QVector<KPluginMetaData> pluginMetaData =
-      KPluginMetaData::findPlugins(pluginNamespace, filter);
-#endif
 
   const QStringList extraPaths = KonsoleSettings::customPluginPaths();
   for (const QString &path : extraPaths) {

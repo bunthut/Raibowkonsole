@@ -17,7 +17,7 @@ configure_file(config-konsole.h.cmake
 
 ### Tests
 if(BUILD_TESTING)
-        find_package(Qt${QT_MAJOR_VERSION}Test ${QT_MIN_VERSION} CONFIG REQUIRED)
+        find_package(Qt5Test ${QT_MIN_VERSION} CONFIG REQUIRED)
         add_subdirectory(autotests)
         add_subdirectory(tests)
 endif()
@@ -39,18 +39,18 @@ if(HAVE_DBUS)
     # qdbuscpp2xml -M -s ViewManager.h -o org.kde.konsole.Konsole.xml
 
     # Generate dbus .xml files; do not store .xml in source folder
-    qt_generate_dbus_interface(ViewManager.h org.kde.konsole.Window.xml OPTIONS -m)
+    qt5_generate_dbus_interface(ViewManager.h org.kde.konsole.Window.xml OPTIONS -m)
 
-    qt_add_dbus_adaptor(windowadaptors_SRCS
+    qt5_add_dbus_adaptor(windowadaptors_SRCS
                         ${CMAKE_CURRENT_BINARY_DIR}/org.kde.konsole.Window.xml
                         ViewManager.h
                         Konsole::ViewManager)
 
     # qdbuscpp2xml -m  Session.h -o org.kde.konsole.Session.xml
     # Generate dbus .xml files; do not store .xml in source folder
-    qt_generate_dbus_interface(session/Session.h org.kde.konsole.Session.xml OPTIONS -m)
+    qt5_generate_dbus_interface(session/Session.h org.kde.konsole.Session.xml OPTIONS -m)
 
-    qt_add_dbus_adaptor(
+    qt5_add_dbus_adaptor(
         sessionadaptors_SRCS
         ${CMAKE_CURRENT_BINARY_DIR}/org.kde.konsole.Session.xml
         session/Session.h
@@ -65,9 +65,9 @@ endif()
 
 set(konsole_LIBS
     ${KF_PREFIX}::XmlGui
-    Qt::Multimedia
-    Qt::PrintSupport
-    Qt::Xml
+    Qt5::Multimedia
+    Qt5::PrintSupport
+    Qt5::Xml
     ${KF_PREFIX}::Notifications
     ${KF_PREFIX}::WindowSystem
     ${KF_PREFIX}::TextWidgets
@@ -132,8 +132,8 @@ add_library(konsolehelpers
 )
 set_target_properties(konsolehelpers PROPERTIES POSITION_INDEPENDENT_CODE ON)
 target_link_libraries(konsolehelpers
-    Qt::Core
-    Qt::Widgets
+    Qt5::Core
+    Qt5::Widgets
 )
 
 add_subdirectory(colorscheme)
@@ -402,7 +402,7 @@ target_link_libraries(konsolepart
     konsoleprivate
 )
 
-install(TARGETS konsolepart DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/parts)
+install(TARGETS konsolepart DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/parts)
 
 # Add cmake-options -DBUILD_COVERAGE=ON -DCOVERAGE_GENERATE_HTML=ON
 if(COVERAGE_GENERATE_HTML)

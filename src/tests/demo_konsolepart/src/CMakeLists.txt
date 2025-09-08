@@ -10,7 +10,7 @@ target_link_libraries(demo_konsolepart
     ${KF_PREFIX}::I18n
     ${KF_PREFIX}::Parts
     ${KF_PREFIX}::Service
-    Qt::Widgets
+    Qt5::Widgets
     ${KF_PREFIX}::XmlGui
     ${KF_PREFIX}::WindowSystem
 )

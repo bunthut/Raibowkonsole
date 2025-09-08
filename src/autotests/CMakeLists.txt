@@ -16,7 +16,7 @@ endif()
 if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND NOT WIN32)
     ecm_add_test(
         PartTest.cpp
-        LINK_LIBRARIES ${KF_PREFIX}::XmlGui ${KF_PREFIX}::Parts ${KF_PREFIX}::Pty ${KONSOLE_TEST_LIBS}
+        LINK_LIBRARIES KF6::XmlGui KF6::Parts KF6::Pty ${KONSOLE_TEST_LIBS}
     )
 endif()
 
@@ -38,7 +38,7 @@ ecm_add_tests(
 if(NOT WIN32)
     ecm_add_tests(
         PtyTest.cpp
-        LINK_LIBRARIES ${KF_PREFIX}::Pty ${KONSOLE_TEST_LIBS}
+        LINK_LIBRARIES KF6::Pty ${KONSOLE_TEST_LIBS}
     )
 endif()
 
@@ -48,5 +48,5 @@ ecm_add_tests(
     TerminalInterfaceTest.cpp
     TerminalTest.cpp
     ViewManagerTest.cpp
-    LINK_LIBRARIES ${KONSOLE_TEST_LIBS} ${KF_PREFIX}::Parts
+    LINK_LIBRARIES ${KONSOLE_TEST_LIBS} KF6::Parts
 )

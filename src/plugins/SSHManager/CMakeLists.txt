@@ -20,7 +20,9 @@ SOURCES
     sshtreeview.cpp
     ${extra_sshplugin_SRCS}
 INSTALL_NAMESPACE
+
     "qt5/plugins/konsoleplugins"
+
 )
 
 configure_file(konsole_sshmanager.in.json konsole_sshmanager.json)

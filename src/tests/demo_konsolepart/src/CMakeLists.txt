@@ -6,6 +6,7 @@ set(demo_konsolepart_SRCS
 add_executable(demo_konsolepart ${demo_konsolepart_SRCS})
 
 target_link_libraries(demo_konsolepart
+
     ${KF_PREFIX}::CoreAddons
     ${KF_PREFIX}::I18n
     ${KF_PREFIX}::Parts
@@ -13,4 +14,5 @@ target_link_libraries(demo_konsolepart
     Qt5::Widgets
     ${KF_PREFIX}::XmlGui
     ${KF_PREFIX}::WindowSystem
+
 )

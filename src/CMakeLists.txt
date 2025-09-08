@@ -17,7 +17,9 @@ configure_file(config-konsole.h.cmake
 
 ### Tests
 if(BUILD_TESTING)
+
         find_package(Qt5Test ${QT_MIN_VERSION} CONFIG REQUIRED)
+
         add_subdirectory(autotests)
         add_subdirectory(tests)
 endif()
@@ -64,6 +66,7 @@ if(HAVE_DBUS)
 endif()
 
 set(konsole_LIBS
+
     ${KF_PREFIX}::XmlGui
     Qt5::Multimedia
     Qt5::PrintSupport
@@ -78,18 +81,19 @@ set(konsole_LIBS
     ${KF_PREFIX}::I18n
     ${KF_PREFIX}::KIOWidgets
     ${KF_PREFIX}::NewStuffCore
+
 )
 
 if(NOT WIN32)
     list(APPEND konsole_LIBS
-        ${KF_PREFIX}::Pty
+        KF6::Pty
     )
 endif()
 
 if(HAVE_DBUS)
     list(APPEND konsole_LIBS
-        ${KF_PREFIX}::DBusAddons
-        ${KF_PREFIX}::GlobalAccel
+        KF6::DBusAddons
+        KF6::GlobalAccel
     )
 endif()
 
@@ -121,7 +125,7 @@ ecm_qt_declare_logging_category(
 add_library(konsoleprivate_core STATIC ${konsoleprivate_core_SRCS})
 # Needed to link this static lib to shared libs
 set_target_properties(konsoleprivate_core PROPERTIES POSITION_INDEPENDENT_CODE ON)
-target_link_libraries(konsoleprivate_core ${KF_PREFIX}::CoreAddons)
+target_link_libraries(konsoleprivate_core KF6::CoreAddons)
 
 set(konsolehelpers_SRCS
     LabelsAligner.cpp
@@ -293,8 +297,8 @@ target_link_libraries(konsoleprivate
     konsolehelpers
     konsolecharacters
     konsoledecoders
-    ${KF_PREFIX}::NewStuffCore
-    ${KF_PREFIX}::NewStuffWidgets
+    KF6::NewStuffCore
+    KF6::NewStuffWidgets
     ${konsole_LIBS}
     ZLIB::ZLIB
     ICU::uc
@@ -303,8 +307,8 @@ target_link_libraries(konsoleprivate
 
 target_link_libraries(konsoleprivate
     PRIVATE
-    ${KF_PREFIX}::IconWidgets
-    ${KF_PREFIX}::BookmarksWidgets
+    KF6::IconWidgets
+    KF6::BookmarksWidgets
 )
 
 set_target_properties(konsoleprivate PROPERTIES
@@ -335,14 +339,14 @@ target_compile_definitions(konsoleapp PRIVATE -DRELEASE_SERVICE_VERSION="${RELEA
 
 target_link_libraries(konsoleapp
   konsoleprivate
-  ${KF_PREFIX}::XmlGui
-  ${KF_PREFIX}::WindowSystem
-  ${KF_PREFIX}::Bookmarks
-  ${KF_PREFIX}::I18n
-  ${KF_PREFIX}::KIOWidgets
-  ${KF_PREFIX}::NotifyConfig
-  ${KF_PREFIX}::Crash
-  ${KF_PREFIX}::ConfigWidgets
+  KF6::XmlGui
+  KF6::WindowSystem
+  KF6::Bookmarks
+  KF6::I18n
+  KF6::KIOWidgets
+  KF6::NotifyConfig
+  KF6::Crash
+  KF6::ConfigWidgets
 )
 
 set_target_properties(konsoleapp PROPERTIES
@@ -362,13 +366,13 @@ add_executable(konsole ${konsole_SRCS} ${ICONS_SOURCES})
 target_link_libraries(konsole
   konsoleprivate
   konsoleapp
-  ${KF_PREFIX}::XmlGui
-  ${KF_PREFIX}::WindowSystem
-  ${KF_PREFIX}::Bookmarks
-  ${KF_PREFIX}::I18n
-  ${KF_PREFIX}::KIOWidgets
-  ${KF_PREFIX}::NotifyConfig
-  ${KF_PREFIX}::Crash
+  KF6::XmlGui
+  KF6::WindowSystem
+  KF6::Bookmarks
+  KF6::I18n
+  KF6::KIOWidgets
+  KF6::NotifyConfig
+  KF6::Crash
 )
 
 if(APPLE)
@@ -397,8 +401,8 @@ add_library(konsolepart MODULE ${konsolepart_PART_SRCS})
 generate_export_header(konsolepart BASE_NAME konsole)
 set_target_properties(konsolepart PROPERTIES DEFINE_SYMBOL KONSOLE_PART)
 target_link_libraries(konsolepart
-    ${KF_PREFIX}::Parts
-    ${KF_PREFIX}::XmlGui
+    KF6::Parts
+    KF6::XmlGui
     konsoleprivate
 )
 

@@ -53,6 +53,10 @@ void PluginManager::loadAllPlugins() {
     return false;
   };
 
+
+
+  QString pluginNamespace = QStringLiteral("konsoleplugins");
+
   QVector<KPluginMetaData> pluginMetaData = KPluginMetaData::findPlugins(
       QStringLiteral("qt5/plugins/konsoleplugins"), filter);
   if (pluginMetaData.isEmpty()) {

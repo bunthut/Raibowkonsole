@@ -648,10 +648,8 @@ void TerminalPainter::drawCharacters(QPainter &painter,
         QFont::Black,
     };
 
-    // The weight used as bold depends on selected font's weight.
+    // The weight used as bold depends on the selected font's weight.
     // "Regular" will use "Bold", but e.g. "Thin" will use "Light".
-    // Note that QFont::weight/setWeight() returns/takes an int in Qt5,
-    // and a QFont::Weight in Qt6
     const auto normalWeight = m_parentDisplay->font().weight();
     auto it = std::upper_bound(std::begin(FontWeights), std::end(FontWeights), normalWeight);
     const QFont::Weight boldWeight = it != std::end(FontWeights) ? *it : QFont::Black;
@@ -1109,10 +1107,8 @@ void TerminalPainter::drawTextCharacters(QPainter &painter,
         characterColor = QColor(0, 0, 0);
     }
 
-    // The weight used as bold depends on selected font's weight.
+    // The weight used as bold depends on the selected font's weight.
     // "Regular" will use "Bold", but e.g. "Thin" will use "Light".
-    // Note that QFont::weight/setWeight() returns/takes an int in Qt5,
-    // and a QFont::Weight in Qt6
     QFont savedFont;
     bool restoreFont = false;
     if ((style.flags & EF_EMOJI_REPRESENTATION) && m_parentDisplay->terminalFont()->hasExtraFont(0)) {

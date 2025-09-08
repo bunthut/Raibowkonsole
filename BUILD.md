@@ -13,8 +13,10 @@ apt install git cmake make g++ extra-cmake-modules qtbase5-dev qtdeclarative5-de
     kf5-textwidgets-dev kf5-widgetsaddons-dev kf5-windowsystem-dev kf5-xmlgui-dev kf5-pty-dev
 ```
    Optional components:
+
    - `kf5-dbusaddons-dev` and `kf5-globalaccel-dev` (requires Qt's DBus module, provided by `qtbase5-dev`)
    - `kf5-doctools-dev` to build documentation
+
 2. Clone with `git clone https://invent.kde.org/utilities/konsole.git`
 3. Make _build_ directory: `mkdir konsole/build`
 4. Change into _build_ directory: `cd konsole/build`

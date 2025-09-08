@@ -1413,7 +1413,6 @@ void SessionController::copyInputToNone()
         return;
     }
 
-    // Once Qt5.14+ is the minimum, change to use range constructors
     const QList<Session *> groupList = SessionManager::instance()->sessions();
     QSet<Session *> group(groupList.begin(), groupList.end());
 

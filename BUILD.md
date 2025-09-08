@@ -15,16 +15,14 @@ apt install git cmake make g++ extra-cmake-modules qt6-base-dev qt6-declarative-
    Optional components:
    - `kf6-dbusaddons-dev` and `kf6-globalaccel-dev` (requires Qt's DBus module, provided by `qt6-base-dev`)
    - `kf6-doctools-dev` to build documentation
-   To build with Qt5/KF5, install the corresponding Qt5 and KF5 development packages and see the configure step below.
 2. Clone with `git clone https://invent.kde.org/utilities/konsole.git`
 3. Make _build_ directory: `mkdir konsole/build`
 4. Change into _build_ directory: `cd konsole/build`
 5. Configure: `cmake ..` (or `cmake .. -DCMAKE_INSTALL_PREFIX=/where/your/want/to/install`)
-   To build against Qt5/KF5 use: `cmake .. -DBUILD_WITH_QT5=ON`
 
    Alternatively, from the project root you can run:
    ```
-   cmake -S . -B build -DBUILD_WITH_QT5=ON
+   cmake -S . -B build
    ```
 6. Build: `make`
 7. Install: `make install`

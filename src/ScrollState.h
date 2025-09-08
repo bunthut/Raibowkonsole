@@ -17,9 +17,8 @@ namespace Konsole
  * Modern high precision scroll events supply many smaller events
  * that may or may not translate into a UI action to support smooth
  * pixel level scrolling. Builtin classes such as QScrollBar
- * support these events under Qt5, but custom code
- * written to handle scroll events in other ways must be modified
- * to accumulate small deltas and act when suitable thresholds have
+ * support these events, but custom code written to handle scroll events
+ * must be modified to accumulate small deltas and act when suitable thresholds have
  * been reached (ideally 1 for pixel scroll values towards any action
  * that can be mapped to a pixel movement).
  */

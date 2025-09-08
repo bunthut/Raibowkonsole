@@ -53,11 +53,14 @@ void PluginManager::loadAllPlugins() {
     return false;
   };
 
+
+
   QString pluginNamespace = QStringLiteral("konsoleplugins");
+
   QVector<KPluginMetaData> pluginMetaData = KPluginMetaData::findPlugins(
-      QStringLiteral("kf6/konsoleplugins"), filter);
+      QStringLiteral("qt5/plugins/konsoleplugins"), filter);
   if (pluginMetaData.isEmpty()) {
-    pluginMetaData = KPluginMetaData::findPlugins(pluginNamespace, filter);
+    pluginMetaData = KPluginMetaData::findPlugins(QStringLiteral("konsoleplugins"), filter);
   }
 
   const QStringList extraPaths = KonsoleSettings::customPluginPaths();

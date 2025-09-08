@@ -9,7 +9,9 @@ SOURCES
     filtermodel.cpp
     ${EXTRA_QUICKCOMMANDSPLUGIN_SRCS}
 INSTALL_NAMESPACE
-    "qt6/plugins/konsoleplugins"
+
+    "qt5/plugins/konsoleplugins"
+
 )
 
 configure_file(konsole_quickcommands.in.json konsole_quickcommands.json)

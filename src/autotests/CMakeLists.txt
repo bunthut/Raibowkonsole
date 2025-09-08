@@ -2,7 +2,7 @@ include(ECMAddTests)
 
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
 
-set(KONSOLE_TEST_LIBS Qt::Test konsoleprivate konsolecharacters konsoledecoders konsoleapp)
+set(KONSOLE_TEST_LIBS Qt5::Test konsoleprivate konsolecharacters konsoledecoders konsoleapp)
 
 if (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
     set(KONSOLE_TEST_LIBS ${KONSOLE_TEST_LIBS} kvm)

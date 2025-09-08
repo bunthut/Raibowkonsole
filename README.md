@@ -3,9 +3,9 @@
 
 Konsole-Plugin für zufällige Farbschemata beim Start neuer Terminal-Sessions.
 
-Autor: Thomas Lorkowski  
-Status: Experimentell  
-Kompatibilität: Plasma 6 / KDE Frameworks 6 / Qt 6
+Autor: Thomas Lorkowski
+Status: Experimentell
+Kompatibilität: Plasma 5 / KDE Frameworks 5 / Qt 5
 
 ───────
 
@@ -32,7 +32,7 @@ Dieses Plugin erweitert Konsole um die Fähigkeit, bei jeder neuen Terminal-Sess
   - `/usr/share/konsole/`
 
 • Installation unter:
-  - `/usr/lib/x86_64-linux-gnu/plugins/konsole/randomcolorplugin.so`
+  - `/usr/lib/x86_64-linux-gnu/qt5/plugins/konsoleplugins/konsole_randomcolorsplugin.so`
 
 • Aktivierbar über:
   - Menü → Einstellungen → Plugins

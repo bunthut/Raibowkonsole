@@ -7,14 +7,12 @@
 ###   See `uni2characterwidth --help` for usage information
 if(KONSOLE_BUILD_UNI2CHARACTERWIDTH)
 
-# NOTE: this doesn't build with Qt6 even using compat and there are
-#       some other errors that will need fixed.  For now if this
-#       needs to be used, build it on a Qt5 system.
+# NOTE: this tool currently doesn't build with Qt6 and needs fixes.
 
-    find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED
+    find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED
         Core
     )
-    find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED
         KIO
     )
 
@@ -28,7 +26,7 @@ if(KONSOLE_BUILD_UNI2CHARACTERWIDTH)
     add_executable(uni2characterwidth ${uni2characterwidth_SRC})
     target_link_libraries(uni2characterwidth
         Qt::Core
-        ${KF_PREFIX}::KIOCore
+        KF6::KIOCore
     )
 
 endif()

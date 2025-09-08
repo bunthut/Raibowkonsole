@@ -12,17 +12,6 @@
             }
         },
         {
-            "name": "dev-qt5",
-            "displayName": "Build as debug using Qt5",
-            "generator": "Ninja",
-            "binaryDir": "${sourceDir}/build-qt5",
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-                "BUILD_WITH_QT5": "ON"
-            }
-        },
-        {
             "name": "dev-disable-deprecated",
             "displayName": "Build as without deprecated methods",
             "generator": "Ninja",
@@ -92,10 +81,6 @@
         {
             "name": "dev",
             "configurePreset": "dev"
-        },
-        {
-            "name": "dev-qt5",
-            "configurePreset": "dev-qt5"
         },
         {
             "name": "asan",

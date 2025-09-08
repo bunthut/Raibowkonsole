@@ -1,0 +1,243 @@
+{
+	"BUILD_DIR" : "/home/hyper/code/Raibowkonsole/build/src/colorscheme/konsolecolorscheme_autogen",
+	"CMAKE_BINARY_DIR" : "/home/hyper/code/Raibowkonsole/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/hyper/code/Raibowkonsole/build/src/colorscheme",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/hyper/code/Raibowkonsole/src/colorscheme",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/home/hyper/code/Raibowkonsole/src/colorscheme/CMakeLists.txt",
+		"/usr/share/ECM/modules/ECMQtDeclareLoggingCategory.cpp.in",
+		"/usr/share/ECM/modules/ECMQtDeclareLoggingCategory.h.in"
+	],
+	"CMAKE_SOURCE_DIR" : "/home/hyper/code/Raibowkonsole",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "/home/hyper/code/Raibowkonsole/build/src/colorscheme/konsolecolorscheme_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "konsolecolorscheme_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"/home/hyper/code/Raibowkonsole/build/src/colorscheme/colorschemedebug.h",
+			"Mu",
+			"EJRQKI7XPS/moc_colorschemedebug.cpp",
+			null
+		],
+		[
+			"/home/hyper/code/Raibowkonsole/src/colorscheme/ColorScheme.h",
+			"Mu",
+			"EWIEGA46WW/moc_ColorScheme.cpp",
+			null
+		],
+		[
+			"/home/hyper/code/Raibowkonsole/src/colorscheme/ColorSchemeEditor.h",
+			"Mu",
+			"EWIEGA46WW/moc_ColorSchemeEditor.cpp",
+			null
+		],
+		[
+			"/home/hyper/code/Raibowkonsole/src/colorscheme/ColorSchemeManager.h",
+			"Mu",
+			"EWIEGA46WW/moc_ColorSchemeManager.cpp",
+			null
+		],
+		[
+			"/home/hyper/code/Raibowkonsole/src/colorscheme/ColorSchemeViewDelegate.h",
+			"Mu",
+			"EWIEGA46WW/moc_ColorSchemeViewDelegate.cpp",
+			null
+		],
+		[
+			"/home/hyper/code/Raibowkonsole/src/colorscheme/ColorSchemeWallpaper.h",
+			"Mu",
+			"EWIEGA46WW/moc_ColorSchemeWallpaper.cpp",
+			null
+		],
+		[
+			"/home/hyper/code/Raibowkonsole/src/colorscheme/RandomizationRange.h",
+			"Mu",
+			"EWIEGA46WW/moc_RandomizationRange.cpp",
+			null
+		],
+		[
+			"/home/hyper/code/Raibowkonsole/src/colorscheme/hsluv.h",
+			"Mu",
+			"EWIEGA46WW/moc_hsluv.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/hyper/code/Raibowkonsole/build/src/colorscheme/konsolecolorscheme_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/hyper/code/Raibowkonsole/build/src/colorscheme/konsolecolorscheme_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"KCOREADDONS_LIB",
+		"KGUIADDONS_LIB",
+		"QT_CORE_LIB",
+		"QT_DBUS_LIB",
+		"QT_GUI_LIB",
+		"QT_MULTIMEDIA_LIB",
+		"QT_NETWORK_LIB",
+		"QT_NO_CAST_FROM_ASCII",
+		"QT_NO_CAST_FROM_BYTEARRAY",
+		"QT_NO_CAST_TO_ASCII",
+		"QT_NO_FOREACH",
+		"QT_NO_KEYWORDS",
+		"QT_NO_NARROWING_CONVERSIONS_IN_CONNECT",
+		"QT_NO_URL_CAST_FROM_STRING",
+		"QT_PRINTSUPPORT_LIB",
+		"QT_QMLINTEGRATION_LIB",
+		"QT_QML_LIB",
+		"QT_STRICT_ITERATORS",
+		"QT_USE_QSTRINGBUILDER",
+		"QT_WIDGETS_LIB",
+		"QT_XML_LIB",
+		"TRANSLATION_DOMAIN=\"konsole\"",
+		"_GNU_SOURCE",
+		"_LARGEFILE64_SOURCE"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/hyper/code/Raibowkonsole/build/src/colorscheme",
+		"/home/hyper/code/Raibowkonsole/src/colorscheme",
+		"/home/hyper/code/Raibowkonsole",
+		"/home/hyper/code/Raibowkonsole/build",
+		"/usr/include/KF6/KXmlGui",
+		"/usr/include/x86_64-linux-gnu/qt6/QtXml",
+		"/usr/include/x86_64-linux-gnu/qt6",
+		"/usr/include/x86_64-linux-gnu/qt6/QtCore",
+		"/usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++",
+		"/usr/include/x86_64-linux-gnu/qt6/QtWidgets",
+		"/usr/include/x86_64-linux-gnu/qt6/QtGui",
+		"/usr/include/KF6/KConfig",
+		"/usr/include/KF6/KConfigCore",
+		"/usr/include/KF6/KConfigWidgets",
+		"/usr/include/KF6/KWidgetsAddons",
+		"/usr/include/KF6/KConfigGui",
+		"/usr/include/KF6/KColorScheme",
+		"/usr/include/KF6/KGuiAddons",
+		"/usr/include/x86_64-linux-gnu/qt6/QtDBus",
+		"/usr/include/x86_64-linux-gnu/qt6/QtMultimedia",
+		"/usr/include/x86_64-linux-gnu/qt6/QtNetwork",
+		"/usr/include/x86_64-linux-gnu/qt6/QtPrintSupport",
+		"/usr/include/KF6/KNotifications",
+		"/usr/include/KF6/KWindowSystem",
+		"/usr/include/KF6/KTextWidgets",
+		"/usr/include/KF6/SonnetUi",
+		"/usr/include/KF6/Sonnet",
+		"/usr/include/KF6/KI18n",
+		"/usr/include/KF6/KIconThemes",
+		"/usr/include/KF6/KCMUtils",
+		"/usr/include/KF6/KCoreAddons",
+		"/usr/include/KF6/KCMUtilsQuick",
+		"/usr/include/x86_64-linux-gnu/qt6/QtQml",
+		"/usr/include/x86_64-linux-gnu/qt6/QtQmlIntegration",
+		"/usr/include/KF6/KCMUtilsCore",
+		"/usr/include/KF6/KBookmarks",
+		"/usr/include/KF6/KIOWidgets",
+		"/usr/include/KF6/KIOGui",
+		"/usr/include/KF6/KIOCore",
+		"/usr/include/KF6/KIO",
+		"/usr/include/KF6/KService",
+		"/usr/include/KF6/KJobWidgets",
+		"/usr/include/KF6/KCompletion",
+		"/usr/include/KF6/KNewStuffCore",
+		"/usr/include/KF6/KNewStuff",
+		"/usr/include/KF6/Attica",
+		"/usr/include/KF6/KPty",
+		"/usr/include/KF6/KDBusAddons",
+		"/usr/include/KF6/KGlobalAccel",
+		"/usr/include",
+		"/usr/include/c++/13",
+		"/usr/include/x86_64-linux-gnu/c++/13",
+		"/usr/include/c++/13/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/13/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS",
+		"K_PLUGIN_FACTORY",
+		"K_PLUGIN_CLASS",
+		"K_PLUGIN_FACTORY_WITH_JSON",
+		"K_PLUGIN_CLASS_WITH_JSON"
+	],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-std=c++17",
+		"-dM",
+		"-E",
+		"-c",
+		"/usr/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/hyper/code/Raibowkonsole/build/src/colorscheme/konsolecolorscheme_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : 
+	[
+		"/home/hyper/code/Raibowkonsole/build/src/colorscheme/ui_ColorSchemeEditor.h"
+	],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 4,
+	"PARSE_CACHE_FILE" : "/home/hyper/code/Raibowkonsole/build/src/colorscheme/CMakeFiles/konsolecolorscheme_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt6/libexec/moc",
+	"QT_UIC_EXECUTABLE" : "",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 9,
+	"SETTINGS_FILE" : "/home/hyper/code/Raibowkonsole/build/src/colorscheme/CMakeFiles/konsolecolorscheme_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/hyper/code/Raibowkonsole/build/src/colorscheme/colorschemedebug.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/hyper/code/Raibowkonsole/src/colorscheme/ColorScheme.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/hyper/code/Raibowkonsole/src/colorscheme/ColorSchemeEditor.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/hyper/code/Raibowkonsole/src/colorscheme/ColorSchemeManager.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/hyper/code/Raibowkonsole/src/colorscheme/ColorSchemeViewDelegate.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/hyper/code/Raibowkonsole/src/colorscheme/ColorSchemeWallpaper.cpp",
+			"Mu",
+			null
+		],
+		[
+			"/home/hyper/code/Raibowkonsole/src/colorscheme/RandomizationRange.cpp",
+			"Mu",
+			null
+		],
+		[ "/home/hyper/code/Raibowkonsole/src/colorscheme/hsluv.c", "Mu", null ]
+	],
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

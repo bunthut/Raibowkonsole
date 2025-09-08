@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../lib/libkonsolehelpers.a CMakeFiles/konsolehelpers.dir/konsolehelpers_autogen/mocs_compilation.cpp.o CMakeFiles/konsolehelpers.dir/LabelsAligner.cpp.o
+/usr/bin/ranlib ../lib/libkonsolehelpers.a

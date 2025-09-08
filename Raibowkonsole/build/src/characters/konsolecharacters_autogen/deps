@@ -1,0 +1,16 @@
+konsolecharacters_autogen/timestamp: \
+	/home/hyper/code/Raibowkonsole/build/src/characters/charactersdebug.cpp \
+	/home/hyper/code/Raibowkonsole/build/src/characters/charactersdebug.h \
+	/home/hyper/code/Raibowkonsole/src/characters/CMakeLists.txt \
+	/home/hyper/code/Raibowkonsole/src/characters/CharacterWidth.cpp \
+	/home/hyper/code/Raibowkonsole/src/characters/CharacterWidth.h \
+	/home/hyper/code/Raibowkonsole/src/characters/ExtendedCharTable.cpp \
+	/home/hyper/code/Raibowkonsole/src/characters/ExtendedCharTable.h \
+	/home/hyper/code/Raibowkonsole/src/characters/Hangul.cpp \
+	/home/hyper/code/Raibowkonsole/src/characters/Hangul.h \
+	/home/hyper/code/Raibowkonsole/src/characters/LineBlockCharacters.cpp \
+	/home/hyper/code/Raibowkonsole/src/characters/LineBlockCharacters.h \
+	/usr/share/ECM/modules/ECMQtDeclareLoggingCategory.cpp.in \
+	/usr/share/ECM/modules/ECMQtDeclareLoggingCategory.h.in \
+	/usr/share/cmake-3.30/Modules/exportheader.cmake.in \
+	/usr/bin/cmake

@@ -1,0 +1,178 @@
+{
+	"BUILD_DIR" : "/home/hyper/code/Raibowkonsole/build/src/konsolehelpers_autogen",
+	"CMAKE_BINARY_DIR" : "/home/hyper/code/Raibowkonsole/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/hyper/code/Raibowkonsole/build/src",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/hyper/code/Raibowkonsole/src",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/home/hyper/code/Raibowkonsole/src/CMakeLists.txt",
+		"/usr/share/cmake-3.30/Modules/CheckIncludeFiles.cmake",
+		"/usr/share/ECM/modules/ECMAddAppIcon.cmake",
+		"/home/hyper/code/Raibowkonsole/src/config-konsole.h.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Test/Qt6TestConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Test/Qt6TestConfigVersionImpl.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Test/Qt6TestConfig.cmake",
+		"/usr/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Test/Qt6TestDependencies.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Test/Qt6TestTargets.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Test/Qt6TestTargets-relwithdebinfo.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Test/Qt6TestAdditionalTargetInfo.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6TestPrivate/Qt6TestPrivateConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6TestPrivate/Qt6TestPrivateConfigVersionImpl.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6TestPrivate/Qt6TestPrivateConfig.cmake",
+		"/usr/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6TestPrivate/Qt6TestPrivateDependencies.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6TestPrivate/Qt6TestPrivateTargets.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6TestPrivate/Qt6TestPrivateAdditionalTargetInfo.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6TestPrivate/Qt6TestPrivateVersionlessAliasTargets.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Test/QtTestProperties.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt6Test/Qt6TestVersionlessAliasTargets.cmake",
+		"/usr/share/ECM/modules/ECMQtDeclareLoggingCategory.cpp.in",
+		"/usr/share/ECM/modules/ECMQtDeclareLoggingCategory.h.in",
+		"/usr/share/cmake-3.30/Modules/exportheader.cmake.in",
+		"/usr/share/cmake-3.30/Modules/FindZLIB.cmake",
+		"/usr/share/cmake-3.30/Modules/SelectLibraryConfigurations.cmake",
+		"/usr/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake",
+		"/usr/share/cmake-3.30/Modules/FindPackageMessage.cmake",
+		"/usr/share/cmake-3.30/Modules/exportheader.cmake.in",
+		"/usr/share/cmake-3.30/Modules/exportheader.cmake.in",
+		"/home/hyper/code/Raibowkonsole/src/settings/KonsoleSettings.kcfgc",
+		"/home/hyper/code/Raibowkonsole/data/data.qrc",
+		"/home/hyper/code/Raibowkonsole/desktop/konsole.qrc"
+	],
+	"CMAKE_SOURCE_DIR" : "/home/hyper/code/Raibowkonsole",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "/home/hyper/code/Raibowkonsole/build/src/konsolehelpers_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "konsolehelpers_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"/home/hyper/code/Raibowkonsole/src/LabelsAligner.h",
+			"Mu",
+			"EWIEGA46WW/moc_LabelsAligner.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/hyper/code/Raibowkonsole/build/src/konsolehelpers_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/hyper/code/Raibowkonsole/build/src/konsolehelpers_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NO_CAST_FROM_ASCII",
+		"QT_NO_CAST_FROM_BYTEARRAY",
+		"QT_NO_CAST_TO_ASCII",
+		"QT_NO_FOREACH",
+		"QT_NO_KEYWORDS",
+		"QT_NO_NARROWING_CONVERSIONS_IN_CONNECT",
+		"QT_NO_URL_CAST_FROM_STRING",
+		"QT_STRICT_ITERATORS",
+		"QT_USE_QSTRINGBUILDER",
+		"QT_WIDGETS_LIB",
+		"TRANSLATION_DOMAIN=\"konsole\"",
+		"_GNU_SOURCE",
+		"_LARGEFILE64_SOURCE"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/hyper/code/Raibowkonsole/build/src",
+		"/home/hyper/code/Raibowkonsole/src",
+		"/home/hyper/code/Raibowkonsole",
+		"/home/hyper/code/Raibowkonsole/build",
+		"/usr/include/x86_64-linux-gnu/qt6/QtCore",
+		"/usr/include/x86_64-linux-gnu/qt6",
+		"/usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++",
+		"/usr/include/x86_64-linux-gnu/qt6/QtWidgets",
+		"/usr/include/x86_64-linux-gnu/qt6/QtGui",
+		"/usr/include",
+		"/usr/include/c++/13",
+		"/usr/include/x86_64-linux-gnu/c++/13",
+		"/usr/include/c++/13/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/13/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS",
+		"K_PLUGIN_FACTORY",
+		"K_PLUGIN_CLASS",
+		"K_PLUGIN_FACTORY_WITH_JSON",
+		"K_PLUGIN_CLASS_WITH_JSON"
+	],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-std=c++17",
+		"-dM",
+		"-E",
+		"-c",
+		"/usr/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/hyper/code/Raibowkonsole/build/src/konsolehelpers_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : 
+	[
+		"/home/hyper/code/Raibowkonsole/build/src/KonsoleSettings.cpp",
+		"/home/hyper/code/Raibowkonsole/build/src/KonsoleSettings.h",
+		"/home/hyper/code/Raibowkonsole/build/src/konsoleprivate_core_autogen/mocs_compilation.cpp",
+		"/home/hyper/code/Raibowkonsole/build/src/moc_sessionadaptor.cpp",
+		"/home/hyper/code/Raibowkonsole/build/src/moc_windowadaptor.cpp",
+		"/home/hyper/code/Raibowkonsole/build/src/sessionadaptor.cpp",
+		"/home/hyper/code/Raibowkonsole/build/src/sessionadaptor.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_CopyInputDialog.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_EditProfileAdvancedPage.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_EditProfileAppearancePage.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_EditProfileGeneralPage.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_EditProfileKeyboardPage.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_EditProfileMousePage.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_EditProfileScrollingPage.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_EditProfileTabsPage.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_GeneralSettings.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_HistorySizeDialog.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_HistorySizeWidget.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_KeyBindingEditor.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_MemorySettings.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_PartInfo.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_PluginSettings.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_PrintOptions.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_ProfileSettings.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_RenameTabDialog.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_RenameTabWidget.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_TabBarSettings.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_TemporaryFilesSettings.h",
+		"/home/hyper/code/Raibowkonsole/build/src/ui_ThumbnailsSettings.h",
+		"/home/hyper/code/Raibowkonsole/build/src/windowadaptor.cpp",
+		"/home/hyper/code/Raibowkonsole/build/src/windowadaptor.h"
+	],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 4,
+	"PARSE_CACHE_FILE" : "/home/hyper/code/Raibowkonsole/build/src/CMakeFiles/konsolehelpers_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt6/libexec/moc",
+	"QT_UIC_EXECUTABLE" : "",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 9,
+	"SETTINGS_FILE" : "/home/hyper/code/Raibowkonsole/build/src/CMakeFiles/konsolehelpers_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "/home/hyper/code/Raibowkonsole/src/LabelsAligner.cpp", "Mu", null ]
+	],
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

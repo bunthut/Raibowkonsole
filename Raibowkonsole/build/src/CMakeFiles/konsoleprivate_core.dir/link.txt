@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../lib/libkonsoleprivate_core.a CMakeFiles/konsoleprivate_core.dir/konsoleprivate_core_autogen/mocs_compilation.cpp.o CMakeFiles/konsoleprivate_core.dir/ShellCommand.cpp.o CMakeFiles/konsoleprivate_core.dir/konsoledebug.cpp.o
+/usr/bin/ranlib ../lib/libkonsoleprivate_core.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libkeyboardtranslator.a CMakeFiles/keyboardtranslator.dir/keyboardtranslator_autogen/mocs_compilation.cpp.o CMakeFiles/keyboardtranslator.dir/KeyboardTranslatorManager.cpp.o CMakeFiles/keyboardtranslator.dir/KeyboardTranslatorWriter.cpp.o CMakeFiles/keyboardtranslator.dir/KeyboardTranslator.cpp.o CMakeFiles/keyboardtranslator.dir/KeyboardTranslatorReader.cpp.o
+/usr/bin/ranlib ../../lib/libkeyboardtranslator.a

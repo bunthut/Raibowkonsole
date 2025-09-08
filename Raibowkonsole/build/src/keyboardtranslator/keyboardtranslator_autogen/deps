@@ -1,0 +1,11 @@
+keyboardtranslator_autogen/timestamp: \
+	/home/hyper/code/Raibowkonsole/src/keyboardtranslator/CMakeLists.txt \
+	/home/hyper/code/Raibowkonsole/src/keyboardtranslator/KeyboardTranslator.cpp \
+	/home/hyper/code/Raibowkonsole/src/keyboardtranslator/KeyboardTranslator.h \
+	/home/hyper/code/Raibowkonsole/src/keyboardtranslator/KeyboardTranslatorManager.cpp \
+	/home/hyper/code/Raibowkonsole/src/keyboardtranslator/KeyboardTranslatorManager.h \
+	/home/hyper/code/Raibowkonsole/src/keyboardtranslator/KeyboardTranslatorReader.cpp \
+	/home/hyper/code/Raibowkonsole/src/keyboardtranslator/KeyboardTranslatorReader.h \
+	/home/hyper/code/Raibowkonsole/src/keyboardtranslator/KeyboardTranslatorWriter.cpp \
+	/home/hyper/code/Raibowkonsole/src/keyboardtranslator/KeyboardTranslatorWriter.h \
+	/usr/bin/cmake

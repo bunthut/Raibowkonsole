@@ -7,6 +7,8 @@ Autor: Thomas Lorkowski
 Status: Experimentell
 Kompatibilität: Plasma 5 / KDE Frameworks 5 / Qt 5
 
+Benötigte Qt-Module: Core, Widgets, PrintSupport (kein Qt Multimedia erforderlich)
+
 ───────
 
 ## Idee

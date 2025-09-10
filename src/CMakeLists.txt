@@ -68,7 +68,6 @@ endif()
 set(konsole_LIBS
 
     ${KF_PREFIX}::XmlGui
-    Qt5::Multimedia
     Qt5::PrintSupport
     Qt5::Xml
     ${KF_PREFIX}::Notifications

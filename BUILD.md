@@ -7,7 +7,7 @@ Konsole is a terminal program for KDE.
 
 1. Install dependencies (KDE Frameworks 5.105+). On Debian/Ubuntu:
 ```
-apt install git cmake make g++ extra-cmake-modules qtbase5-dev qtdeclarative5-dev qtmultimedia5-dev libqt5printsupport5-dev \
+apt install git cmake make g++ extra-cmake-modules qtbase5-dev qtdeclarative5-dev libqt5printsupport5-dev \
     kf5-bookmarks-dev kf5-config-dev kf5-configwidgets-dev kf5-coreaddons-dev kf5-crash-dev kf5-guiaddons-dev kf5-i18n-dev \
     kf5-iconthemes-dev kf5-kio-dev kf5-newstuff-dev kf5-notifications-dev kf5-notifyconfig-dev kf5-parts-dev kf5-service-dev \
     kf5-textwidgets-dev kf5-widgetsaddons-dev kf5-windowsystem-dev kf5-xmlgui-dev kf5-pty-dev

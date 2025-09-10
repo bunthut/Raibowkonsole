@@ -53,7 +53,6 @@ include(ECMEnableSanitizers)
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED
 
     Core
-    Multimedia
     PrintSupport
     Widgets
 )
